@@ -60,7 +60,7 @@ pipeline {
                     npm install netlify-cli
                     node_modules/.bin/netlify --version
                     node_modules/.bin/netlify status
-                    node_modules/.bin/netlify deploy --dir=dist
+                    node_modules/.bin/netlify deploy --dir=dist/nutrition-app/browser
                 '''
             }
         }
@@ -77,7 +77,7 @@ pipeline {
                     npm install netlify-cli
                     node_modules/.bin/netlify --version
                     node_modules/.bin/netlify status
-                    node_modules/.bin/netlify deploy --dir=dist --prod
+                    node_modules/.bin/netlify deploy --dir=dist/nutrition-app/browser --prod
                 '''
             }
         }
