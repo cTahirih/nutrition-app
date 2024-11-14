@@ -23,7 +23,8 @@ pipeline {
                     npm --version
                     npm ci
                     npm run build
-                    ls -la
+                    echo '/*    /index.html   200' > dist/browser/_redirects
+                    ls -la dist/browser
                 '''
             }
         }
@@ -37,7 +38,6 @@ pipeline {
                             reuseNode true
                         }
                     }
-
                     steps {
                         sh '''
                             echo 'Tests'
