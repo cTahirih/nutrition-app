@@ -6,6 +6,7 @@ pipeline {
         NETLIFY_SITE_ID = 'cb2c3525-a650-47d5-a7b2-19003edab68c'
         NETLIFY_AUTH_TOKEN = credentials('netlify-token')
         CHROME_BIN = '/usr/bin/google-chrome-stable'
+    }
 
     stages {
         stage('Build') {
