@@ -40,7 +40,7 @@ pipeline {
                 sh '''
                     echo 'Running unit tests...'
                     npm install
-                    npm test:ci
+                    npm run test:ci
                 '''
             }
         }
