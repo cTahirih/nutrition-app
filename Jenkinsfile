@@ -29,21 +29,19 @@ pipeline {
             }
         }
 
-        stage('Tests') {
-            parallel {
-                stage('Unit tests') {
-                    agent {
-                        docker {
-                            image "${NODE_IMAGE}"
-                            reuseNode true
-                        }
-                    }
-                    steps {
-                        sh '''
-                            echo 'Tests'
-                        '''
-                    }
+        stage('Unit tests') {
+            agent {
+                docker {
+                    image "${NODE_IMAGE}"
+                    reuseNode true
                 }
+            }
+            steps {
+                sh '''
+                    echo 'Running unit tests...'
+                    npm install
+                    npm test
+                '''
             }
         }
 
