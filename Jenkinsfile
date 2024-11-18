@@ -8,22 +8,6 @@ pipeline {
         CHROME_BIN = '/usr/bin/google-chrome-stable'
 
     stages {
-        stage('Install Chrome') {
-            agent {
-                docker {
-                    image 'your-custom-image-with-chrome'
-                    reuseNode true
-                }
-            }
-            steps {
-                sh '''
-                    echo 'Installing Google Chrome...'
-                    apt-get update && apt-get install -y google-chrome-stable
-                    google-chrome-stable --version  # Verifica si Chrome se instaló correctamente
-                '''
-            }
-        }
-
         stage('Build') {
             agent {
                 docker {
